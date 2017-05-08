@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
+        android:layout_width="@dimen/list_item_width"
+        android:layout_height="@dimen/list_item_height"
         android:padding="8dp"
         android:src="@mipmap/ic_launcher_round" />
 
