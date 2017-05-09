@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class TabFragmentThree extends Fragment {
+public class BarTabFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

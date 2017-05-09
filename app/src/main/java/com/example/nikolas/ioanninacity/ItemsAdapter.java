@@ -23,25 +23,24 @@ public class ItemsAdapter extends ArrayAdapter<Items> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
 
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_layout, parent, false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_layout, parent, false);
         }
 
         Items currentObject = getItem(position);
 
 
         // First text view
-        TextView textView1 = (TextView) listItemView.findViewById(R.id.name_text_view);
+        TextView textView1 = (TextView) convertView.findViewById(R.id.name_text_view);
         textView1.setText(currentObject.getmName());
 
         // Second text view
-        TextView textView2 = (TextView) listItemView.findViewById(R.id.info_text_view);
+        TextView textView2 = (TextView) convertView.findViewById(R.id.info_text_view);
         textView2.setText(currentObject.getmInfo());
 
         // Third text view
-        TextView textView3 = (TextView) listItemView.findViewById(R.id.odd_text_view);
+        TextView textView3 = (TextView) convertView.findViewById(R.id.odd_text_view);
         if (currentObject.hasmTextExist()) {
             Log.v("heehhe", "exw text view 3");
             textView3.setText("Tel. " + currentObject.getmOdd());
@@ -52,7 +51,7 @@ public class ItemsAdapter extends ArrayAdapter<Items> {
         }
 
         // Image view
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image_view);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.image_view);
         if (currentObject.hasImage()) {
             imageView.setImageResource(currentObject.getmImageResourceID());
             imageView.setVisibility(View.VISIBLE);
@@ -61,6 +60,6 @@ public class ItemsAdapter extends ArrayAdapter<Items> {
         }
 
 
-        return listItemView;
+        return convertView;
     }
 }
